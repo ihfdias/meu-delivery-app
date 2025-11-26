@@ -1,0 +1,33 @@
+### Criar Usuário (Já testamos, pode deixar aqui)
+POST http://localhost:3333/users
+Content-Type: application/json
+
+{
+  "name": "Igor",
+  "email": "igor@email.com",
+  "password": "1234567"
+}
+
+### Fazer Login (Teste Novo!)
+POST http://localhost:3333/login
+Content-Type: application/json
+
+{
+  "email": "igor@email.com",
+  "password": "1234567"
+}
+
+### Criar Restaurante (Protegido)
+POST http://localhost:3333/restaurants
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSWdvciIsInN1YiI6IjNkZWE3NGZjLWVlZDEtNGUyOC1hMmU0LWZlODllYmZjYzVhMiIsImlhdCI6MTc2NDE5NTk5NywiZXhwIjoxNzY0ODAwNzk3fQ.2u7mInIml1xAUYwSLVuYT04P7JMdjWJNi0wD1egMLAw
+
+{
+  "name": "Hamburgueria do Dev",
+  "description": "O melhor lanche de SP",
+  "address": "Rua do Código, 100",
+  "phone": "11999999999"
+}
+
+### Listar Restaurantes
+GET http://localhost:3333/restaurants

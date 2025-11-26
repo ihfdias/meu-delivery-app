@@ -3,6 +3,7 @@ import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
 import { userRoutes } from './routes/users.js';
 import { authRoutes } from './routes/auth.js';
+import { restaurantsRoutes } from './routes/restaurants.ts';
 
 const app = Fastify({
     logger: true
@@ -18,6 +19,7 @@ app.register(jwt, {
 
 app.register(userRoutes);
 app.register(authRoutes);
+app.register(restaurantsRoutes);
 
 app.get('/', async (request, reply) => {
     return { mensagem: "Bem-vindo à API do Clone do iFood!"};
