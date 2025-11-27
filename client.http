@@ -1,0 +1,20 @@
+### Criar Usuário (Já testamos, pode deixar aqui)
+POST http://localhost:3333/users
+Content-Type: application/json
+
+{
+  "name": "Cliente Faminto",
+  "email": "cliente@teste.com",
+  "password": "123"
+}
+
+### Fazer Login (Teste Novo!)
+POST http://localhost:3333/login
+Content-Type: application/json
+
+{
+  "email": "cliente@teste.com",
+  "password": "123"
+}
+### Listar Restaurantes
+GET http://localhost:3333/restaurants
